@@ -18,9 +18,8 @@ public:
 };
 
 int main(){
-    Box(29.2,34.23,14.2);
-    Box b;
-    b.showVolume();
+    Box box{29.2,34.23,14.2};
+    box.showVolume();
 
     return 0;
 }
