@@ -9,7 +9,6 @@ using namespace std;
 class LOGIN {
 private:
 	string username_admin, password_admin;
-	string username_staff, password_staff;
 	string username_user, password_user;
 	int pin;
 public:
@@ -1918,7 +1917,7 @@ int main() {
 										}
 									}
 									if(isfound == 0){
-										cout << "\nThe Id [ " << name_search << " ] Search not found!\n\n";
+										cout << "\nThe name [ " << name_search << " ] Search not found!\n\n";
 									}
 									system("pause");
 								break;
@@ -1935,7 +1934,7 @@ int main() {
 										}
 									}
 									if(isfound == 0){
-										cout << "\nThe Id [ " << search_contact << " ] Search not found!\n\n";
+										cout << "\nThe Tel [ " << search_contact << " ] Search not found!\n\n";
 									}
 									system("pause");
 								break;
@@ -2442,7 +2441,7 @@ int main() {
 										}
 									}
 									if(isfound == 0){
-										cout << "\nThis [ "<< search_id << " ] Search not found!\n\n";
+										cout << "\nThis id[ "<< search_id << " ] Search not found!\n\n";
 									}
 									system("pause");
 								break;
@@ -2458,7 +2457,7 @@ int main() {
 										}
 									}
 									if(isfound == 0){
-										cout << "\nThis [ "<< name_search << " ] Search not found!\n\n";
+										cout << "\nThis name[ "<< name_search << " ] Search not found!\n\n";
 									}
 									system("pause");
 								break;

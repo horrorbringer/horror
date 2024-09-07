@@ -581,18 +581,23 @@ void APP::Atm(){
 		switch(choice){
 			case 1:
 				myAccount(total_Balance_us,total_Balance_kh);
+				system("pause");
 			break;
 			case 2:
 				ManuDeposit();
+				system("pause");
 			break;
 			case 3:
 				MenuWithdraw();
+				system("pause");
 			break;
 			case 4:
 				MenuTransfer();
+				system("pause");
 			break;
 			case 5:
 				MenuPayment();
+				system("pause");
 			break;
 		}
 	}while(choice != 0) ;
@@ -779,7 +784,7 @@ void RUNCODE::MenuStaff(){
                 break;
             case 5:
                 system("cls");
-                DeleteAccounttCustomer();
+                DeleteInformationStaff();
             break;
         }
         system("cls");
@@ -908,7 +913,11 @@ void RUNCODE::AddInformationtStaff(){
 void RUNCODE::DisplayInformationStaff(){
     cout <<"                                                                        DISPLAY INFORMATION STAFF                  \n";
 	cout << "                                            ---------------------------------------------------------------------\n\n";
-	headerStaffDisplay();
+	if(n_Index_Staff > 0)
+		headerStaffDisplay();
+	else
+		cout << "Please Input infor staff first!\n";
+	
 	for(i = 0; i < n_Index_Staff;i++){
 		staff[i].diplayStaff();
 		isfound = 1;
@@ -1233,7 +1242,7 @@ void RUNCODE::DeleteInformationStaff(){
 			break;
 		}
 	}
-	if(isfound == 0){
+	if(isfound != 1){
 		cout << "\n\nThis id search not found!\n";
 	}
 	system("pause");
@@ -1561,11 +1570,11 @@ void RUNCODE::StaffLogin(){
 
 void RUNCODE::UserLogin(){
 	cout << "++=====================================================++\n";
-	cout << "||                     STAFF LOGIN                     ||\n";
+	cout << "||                     USER LOGIN                     ||\n";
 	cout << "++=====================================================++\n\n";
 	cout << "Enter Username: "; cin >> usernameLog;
 	cout << "\nEnter Password: "; cin >> passwordLog;
-	for(i = 0; i < n_Index_Staff; i++){
+	for(i = 0; i < n_Index_Customer; i++){
 		if(usernameLog == custom[i].getUsername() && passwordLog == custom[i].getPasswrd()){
 			cout << "\nLogin Success!\n\n";
 			custom[i].Atm();
@@ -1578,7 +1587,6 @@ void RUNCODE::UserLogin(){
 	}
 	system("pause");
 }
-
 
 int main(){
 	RUNCODE r;
